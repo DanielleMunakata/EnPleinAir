@@ -22,7 +22,26 @@ function cadastrar(nome, email, senha, artista,pintura) {
     return database.executar(instrucao);
 }
 
+function listarGrafico() {
+    var instrucao = `
+    SELECT COUNT(usuario.fk_artistaPrefer) as voto, artistaPrefer.nomeArtista AS artista
+        FROM usuario JOIN artistaPrefer ON  artistaPrefer.idArtista = usuario.fk_artistaPrefer group by usuario.fk_artistaPrefer;`
+    return database.executar(instrucao);
+ }
+ 
+ function listarGrafico2() {
+     var instrucao = `
+     SELECT COUNT(usuario.fk_pinturaPrefer) AS voto, pinturaPrefer.nomePintura AS pintura
+        FROM usuario
+        JOIN pinturaPrefer ON pinturaPrefer.idPintura = usuario.fk_pinturaPrefer
+        GROUP BY usuario.fk_pinturaPrefer, pinturaPrefer.nomePintura;`
+     return database.executar(instrucao);
+  }
+
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    listarGrafico,
+    listarGrafico2
 };
