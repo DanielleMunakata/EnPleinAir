@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En Plein Air</title>
+    <link rel="stylesheet" href="site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+
+<div class="navcolor">
+  <div class="navbar">
+          <img src="assets/logo.png">
+      <div class="links">
+          <a href="sobreimpressionismo.html">O que é Impressionismo?</a>
+          <a href="sobreaexposicao.html">O que essa exposição?</a>
+          <hr class="separator">
+          <a href="cadastro.html">Cadastro</a>
+          <a href="login.html">Login</a>
+      </div>
+  </div>
+</div>
+
+<div class="cadastro">
+    <div class="formulario">
+      <div class="coluna1">
+        <a href="" class="voltar1">< VOLTAR</a>
+        <p>Nome Completo:</p><input type="text" placeholder="Nome Completo">
+        <p>Email:</p><input type="text" placeholder="nome.sobrenome@gmail.com">
+        <p>Senha:</p><input type="password" placeholder="*******">
+        <p>Data de Nascimento</p><input type="date" placeholder="dd/mm/aaaa">
+      </div>
+      <div class="coluna2">
+  
+        <p>Artista Preferido</p>
+        <select id="">
+          <option value="monet">Claude Monet</option>
+          <option value="seurat">Georges Seurat</option>
+          <option value="pissarro">Camille Pissarro</option>
+          <option value="manet">Édouard Manet</option>
+          <option value="vangogh">Vincent Van Gogh</option>
+          <option value="renoir">Pierre-Auguste Renoir</option>
+          <option value="cezanne">Paul Cézanne</option>
+        </select>
+  
+        <p>Pintura Preferida</p>
+        <select id="">
+          <option value="p_monet1">Caminhada no Penhasco</option>
+          <option value="p_vangogh1">A Noite Estrelada</option>
+          <option value="p_monet2">Impressão Pôr do Sol</option>
+          <option value="p_monet3">Ponte Sobre Uma Lagoa de Lírios d'Àgua</option>
+          <option value="p_vangogh2">Campo de Trigo com Ciprestes</option>
+          <option value="p_cezzane1">Guardanapos de Mesa e Fruta</option>
+          <option value="p_cezzane2">Monte Santa Vitória</option>
+          <option value="p_monet4">Mulher com Sombrinha no Jardim</option>
+          <option value="p_monet5">Mulher com Sombrinha</option>
+          <option value="p_vangogh3">Tarde de Verão</option>
+          <option value="p_monet4">O Jardim em Sainte-Adresse</option>
+          <option value="p_manet1">Primavera</option>
+          <option value="p_manet2">A Leitura</option>
+          <option value="p_pissarro1">Tempo de Inverno</option>
+          <option value="p_pissaro2">Uma Rua em Pointoise</option>
+          <option value="p_seurat1">Torre Eiffel</option>
+          <option value="p_seurat2">Tarde de Domingo na Ilha de Grand Jatte</option>
+          <option value="p_lautrec">Baile no Molin Rouge</option>
+
+
+
+        </select>
+  
+        <a href=""><u>Já tenho uma conta</u></a>
+      </div>
+    </div>
+    <button class="enviarDados" onclick="enviar()">Enviar Dados</button>
+  </div>
+
+
+<div class="login">
+  <div class="formulario2">
+  <a href="" class="voltar2">< VOLTAR</a>
+  <div class="info">
+    <center>
+    <p>Email:</p><input type="text" placeholder="nome.sobrenome@gmail.com">
+    <br><br><p>Senha:</p><input id="senha" type="password" placeholder="*****">
+    </center>
+    </div>
+    </div>
+    <button class="enviarDados" onclick="enviar()">Enviar Dados</button>
+</div>
+
+<!-- 
+    <footer>
+        <p class="sigaRedes">NOS SIGA:</p>
+        <div class="redes">
+          <img src="instagram.png">
+          <img src="whatsapp.png">
+          <img src="facebook.png">
+        </div>
+
+        <div class="logo">
+            <img src="logotext.png" alt="Logo Text">
+          </div>
+      </footer> -->
+      </body>
+      </html>
+      
+<script>
+  
+  function enviar() {
+    var senhaValor = senha.value;
+    if (senhaValor!=8) {
+      alert("A senha deve ter cerca de 8 caracteres");
+    }
+  }
+
+    
+    
+
+</script>      

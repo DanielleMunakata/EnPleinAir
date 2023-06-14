@@ -1,0 +1,268 @@
+body{
+    background-color: #C8A888;
+    margin: 0;
+     padding: 0;
+  }
+
+
+.monet1, .monet2, .monet3, .vangogh1, .vangogh2 {
+    display: inline-block;
+    width: 30%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .monet1 img, .monet2 img, .monet3 img, .vangogh1 img, .vangogh2 img {
+    width: 90%;
+    height: auto;
+    border-radius: 10%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .vangogh1 img, .vangogh2 img {
+    border-radius: 50%;
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  .cezanne1 img{
+    width: 80%;
+    height:20%;
+    border-radius: 10%;
+    border: 3px solid white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .cezanne1{
+    display: inline-block; /* Coloca os elementos na mesma linha */
+    margin-right: 20px;
+  }
+  
+  .monet3 {
+    /* Estilos do Monet3 */
+    display: inline-block; /* Coloca os elementos na mesma linha */
+  }
+  .cezanne2 img {
+    width: 90%;
+    height: 30%;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .renoir1 img {
+    width: 100%;
+    height: 35%;
+    border-radius: 10%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .renoir2 img {
+    width: 70%;
+    height: 50%;
+    border-radius: 10%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .cezanne2,
+  .renoir1,
+  .renoir2 {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    margin-right: 15px;
+  }
+
+  .vangogh3,
+  .monet4,
+  .manet1 {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    margin-right: 20px;
+  }
+
+  .vangogh3 img {
+    width: 100%;
+    height: auto;
+    border-radius: 30%;
+    object-fit: cover;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .monet4 img {
+    width: 100%;
+    height: auto;
+    border-radius: 40%;
+    object-fit: cover;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .manet1 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .manet2,
+  .pissarro1,
+  .pissarro2 {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    vertical-align: top;
+  }
+
+  .manet2 img,
+  .pissarro1 img,
+  .pissarro2 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+  }
+
+.seurat1,
+.seurat2,
+.lautrec1 {
+  display: inline-block; /* Coloca os elementos na mesma linha */
+  width: 30%; /* Define a largura das divs */
+  margin: 10px; /* Define uma margem entre as divs */
+  vertical-align: top; /* Alinha as divs ao topo */
+}
+
+.seurat1 img,
+.seurat2 img,
+.lautrec1 img {
+  width: 90%; /* Define a largura das imagens como 100% do contêiner */
+  height: auto; /* Define a altura das imagens automaticamente */
+  border-radius: 10%; /* Define o raio de borda para criar a forma oval */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra às imagens */
+}
+
+
+details{
+    color: #00500A;
+    font-size: 20px;
+    font-family: 'Quattrocento', serif;
+}
+
+summary{
+    font-weight: bold;
+}
+
+img {
+    height: 400px;
+    transition: 1s;
+}
+
+img:hover {
+    transform: scale(1.2,1.2);
+}
+
+
+.comment {
+    display: flex;
+    background-color: #00500A;
+    width: 100%;
+    height: 10vh; /* Aumenta a altura para 100% da altura da viewport */
+  }
+
+
+.comment {
+    background-color: #00500A;
+    width: 100%;
+    height: 10vh; /* Altura da div */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .comment input {
+    width: 50%; /* Largura do input */
+    display: flex;
+    height: 5vh; 
+    border-radius: 20px;
+    font-size: x-large;
+    font-family: 'Quattrocento', serif;
+    margin-top: 1%;
+  }
+
+  button{
+    background-color: #C8A888;
+    color: white;
+    border-radius: 20px;
+    font-size: x-large;
+    font-family: 'Quattrocento', serif;
+    margin-top: 1%;
+    margin-left: 1%;
+    border: #00500A;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra às imagens */
+  }
+
+
+  .navbar {
+    position: fixed;
+    height: 11vh;
+    width: 100%;
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    font-family:'Quattrocento', serif;
+  }
+
+  .separator {
+    height: 50px; /* Ajuste a altura conforme necessário */
+    width: 1px;
+    background-color: white;
+    margin: 0 10px;
+    transform: rotate(180deg);
+    border:none;
+  }
+
+
+  .links {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .links a:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  .navcolor {
+    opacity: 80%;
+    background-color: darkgreen;
+    position: fixed;
+    height: 10vh;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .navcolor img{
+     height:50px;
+  }
+  
+/*O que falta 
+- Mudar a fonte FEITO 
+- Escrever todos os details FEITO 
+- Adicionar a animação FEITO 
+
+.

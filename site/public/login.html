@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> En Plein Air | Login</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Quattrocento&display=swap" rel="stylesheet">
+      <link rel="icon" type="image/png" href="assets/logo.png">
+
+</head>
+
+
+<div class="navcolor">
+    <div class="navbar">
+            <img src="assets/logo.png">
+        <div class="links">
+            <a href="sobreimpressionismo.html">O que é Impressionismo?</a>
+            <a href="sobreaexposicao.html">O que essa exposição?</a>
+            <hr class="separator">
+            <a href="cadastro.html">Cadastro</a>
+            <a href="login.html">Login</a>
+        </div>
+    </div>
+  </div>
+
+
+    <div class="login">
+        <div class="formulario2">
+        <div class="info">
+          <center>
+          <p>Email:</p><input type="text" id="email_input" placeholder="nome.sobrenome@gmail.com">
+          <br><br><p>Senha:</p><input id="senha_input" type="password" placeholder="*****">
+          </center>
+          </div>
+          </div>
+          <button class="enviarDados" onclick="entrar()">Enviar Dados</button>
+      </div>
+
+   
+      <footer>
+        <div class="paragrafo">
+        <p class="sigaRedes">NOS SIGA:</p>
+        <div class="redes">
+          <img src="assets/instagram.png">
+          <img src="assets/facebook.png">
+          <img src="assets/whatsapp.png">
+        </div>
+      </div>
+</footer>
+
+
+  </body>
+  </html>
+<script>
+
+
+    function entrar() {
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        // if (emailVar == "" || senhaVar == "") {
+        //     alert("Insira seu email e senha")
+        //     //mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+        //     return false;
+        // }
+       
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then((resposta)=> {
+            console.log("ESTOU NO THEN DO entrar()!")
+            
+            if (resposta.ok) {
+                console.log(resposta);
+                
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nomeCompleto;
+                    sessionStorage.ID_USUARIO = json.id;
+                    
+
+                    setTimeout(function () {
+                        window.location = "pinturas.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+</script>

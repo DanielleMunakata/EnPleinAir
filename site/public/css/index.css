@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Quattrocento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Quattrocento&display=swap');
+
+body{
+    background-color: #FDFAF0;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: #00500A;
+    display: flex;
+    height: 150px;
+    align-items: center;
+    /* opacity: 100; esse Ã© pra deixar opaco do jeito que vocÃª quer, mas nÃ£o ta funcionando aqui, deve ser em algum outro lugar */
+}
+
+nav img{
+    height: 100px;
+    margin-left: 4%;
+}
+
+ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 36px;
+}
+
+li{
+    display: flex;
+}
+
+ul{
+    display: flex;
+    gap: 50px;
+    margin-left: 40%;
+}
+
+.div-direita img{
+    width:500px;
+    height:500px;
+
+}
+
+.div-janela {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    position: relative;
+    background-image: url('../assets/mancha-removebg-preview.png'), url('../assets/folha-removebg-preview.png'), url('../assets/mancha-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-position: right bottom, left center, right bottom;
+    background-size: contain, auto, contain;
+}
+
+.div-janela::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('../assets/mancha-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    z-index: -2;
+}
+
+.div-folha {
+    position: relative;
+    z-index: 1; /* Ajuste o z-index para colocar a folha na frente da segunda mancha */
+}
+
+
+
+
+.div-central {
+    text-align: center;
+    /* Adicione outros estilos desejados */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00500A;
+    font-size: 100px;
+    font-family: Dancing Script;
+    text-shadow: 10px 10px 5px gray;
+    margin-top: 28vh; /* Ajuste esse valor conforme necessÃ¡rio */
+}
+
+.subtitulo {
+    font-family: 'Quattrocento', serif;
+    color: #00500A;
+    font-size: 40px;
+    margin-top: -250px; /* Ajuste esse valor conforme necessÃ¡rio */
+}
+
+.linha {
+    height: 84vh; /* Ajuste a altura conforme necessÃ¡rio */
+    width: 5px;
+    background-color: #00500A;
+    transform: rotate(90deg);
+    border: none;
+    margin-top: -40vh; /* Ajuste esse valor conforme necessÃ¡rio */
+}
+
+.mancha img{
+    margin-top:40px;
+    margin-right:40px;
+}
+
+.navbar {
+    position: fixed;
+    height: 11vh;
+    width: 100%;
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    font-family:'Quattrocento', serif;
+  }
+
+  .separator {
+    height: 50px; /* Ajuste a altura conforme necessário */
+    width: 1px;
+    background-color: white;
+    margin: 0 10px;
+    transform: rotate(180deg);
+    border:none;
+  }
+
+
+  .links {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .links a:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  .navcolor {
+    opacity: 80%;
+    background-color: darkgreen;
+    position: fixed;
+    height: 10vh;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .navcolor img{
+     height:50px;
+  }
+
+  
+

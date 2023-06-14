@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Quattrocento&display=swap');
+
+
+
+body{
+    background-color:#FDFAF0;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.div-pagina{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.div-pagina img{
+    position: absolute;
+    /* essa imagem ficou meio ruinzinha tem que ver se vai manter ela ou trocar */
+}
+
+.div-sol{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+    height: 400px;
+    width: 900px;
+    border-radius: 30px;
+    background-color: #b88c6c;
+}
+
+.div-sol img {
+    height: 400px;
+}
+.div-titulo{
+    font-family: Dancing Script ;
+    margin: 2%;
+    font-size: 60px;
+    color: #00500A;
+    text-shadow: 10px 10px 5px gray;
+}
+
+.div-texto{
+    font-family:'Quattrocento', serif; ;
+    color: #00500A;
+    font-size: 30px;
+    margin: 2%;
+    text-align: center;
+}
+
+
+.div-botao button{
+    height: 100px;
+    width: 300px;
+    background-color: #00500A;
+    border-radius: 40px;
+    border: none;
+    color: white;
+    font-size: 36px;
+    font-family:'Quattrocento', serif; 
+}
+
+a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: white; /* Define a cor do link */
+  }
+
+
+/* mudar fonte e arrumar a sombra */
+/* mudar fonte e arrumar a sombra */

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>En Plain Air | Cadastro </title>
+
+
+    <script src="./js/sessao.js"></script>
+
+
+    <link rel="stylesheet" href="css/site.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quattrocento&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="assets/imgs/logo.png">
+</head>
+
+<body>
+
+    <!-- header inicio
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo">AquaTech</h1>
+            <ul class="navbar">
+                <li>
+                    <a href="index.html">Inicial</a>
+                </li>
+                <li>
+                    <a href="simulador.html">Simulador</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li class="agora">
+                    <a href="#">Cadastro</a>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+    <!--header fim-->
+
+    <div class="navcolor">
+        <div class="navbar">
+                <img src="assets/logo.png">
+            <div class="links">
+                <a href="sobreimpressionismo.html">O que é Impressionismo?</a>
+                <a href="sobreaexposicao.html">O que essa exposição?</a>
+                <hr class="separator">
+                <a href="cadastro.html">Cadastro</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+      </div>
+      
+
+
+    <div class="cadastro">
+        <div class="formulario">
+          <div class="coluna1">
+            <a href="" class="voltar1">< VOLTAR</a>
+            <p>Nome Completo:</p><input type="text" id="nome_input" placeholder="Nome Completo">
+            <p>Email:</p><input type="text" id="email_input" placeholder="nome.sobrenome@gmail.com">
+            <p>Senha:</p><input type="password" id="senha_input" placeholder="*******">
+          </div>
+          <div class="coluna2">
+      
+            <p>Artista Preferido</p>
+            <select id="artistas">
+              <option value="1">Claude Monet</option>
+              <option value="2">Georges Seurat</option>
+              <option value="3">Camille Pissarro</option>
+              <option value="4">Édouard Manet</option>
+              <option value="5">Vincent Van Gogh</option>
+              <option value="6">Pierre-Auguste Renoir</option>
+              <option value="7">Paul Cézanne</option>
+            </select>
+      
+            <p>Pintura Preferida</p>
+            <select id="pinturas">
+              <option value="1">Caminhada no Penhasco</option>
+              <option value="2">A Noite Estrelada</option>
+              <option value="3">Impressão Pôr do Sol</option>
+              <option value="4">Ponte Sobre Uma Lagoa de Lírios d'Àgua</option>
+              <option value="5">Campo de Trigo com Ciprestes</option>
+              <option value="6">Guardanapos de Mesa e Fruta</option>
+              <option value="7">Monte Santa Vitória</option>
+              <option value="8">Mulher com Sombrinha no Jardim</option>
+              <option value="9">Mulher com Sombrinha</option>
+              <option value="10">Tarde de Verão</option>
+              <option value="11">O Jardim em Sainte-Adresse</option>
+              <option value="12">Primavera</option>
+              <option value="13">A Leitura</option>
+              <option value="14">Tempo de Inverno</option>
+              <option value="15">Uma Rua em Pointoise</option>
+              <option value="16">Torre Eiffel</option>
+              <option value="17">Tarde de Domingo na Ilha de Grand Jatte</option>
+    
+    
+    
+            </select>
+      
+            <a href=""><u>Já tenho uma conta</u></a>
+          </div>
+        </div>
+        <button class="enviarDados" onclick="cadastrar()">Enviar Dados</button>
+      </div>
+    
+    <!-- footer inicio
+    <div class="footer">
+        <div class="container">
+            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
+            <span class="version">v1.0.0</span>
+        </div>
+    </div> -->
+    <!--footer fim-->
+
+    
+    <footer>
+        <div class="paragrafo">
+        <p class="sigaRedes">NOS SIGA:</p>
+        <div class="redes">
+          <img src="assets/instagram.png">
+          <img src="assets/facebook.png">
+          <img src="assets/whatsapp.png">
+        </div>
+      </div>
+</footer>
+
+
+
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var artistasVar = artistas.value;
+        var pinturasVar = pinturas.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" ) {
+            // cardErro.style.display = "block"
+            // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            return false;
+        }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                artistaServer:artistasVar,
+                pinturaServer:pinturasVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // cardErro.style.display = "block";
+
+                // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+
+</script>

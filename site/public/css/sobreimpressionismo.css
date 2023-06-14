@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Quattrocento&display=swap');
+
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.div-janela{
+    display: flex;
+    margin: 2%;
+    width: 1700px;
+    height: 750px;
+    box-shadow: 0px 0px 8px 15px rgba(0,0,0,0.1);
+    flex-direction: column;
+}
+
+
+.div-superior{
+    margin: 3%;
+    display: flex;
+    width: 100%;
+
+}
+
+.div-titulo{
+    font-family: 'Dancing Script';
+    font-size: 96px;
+    color: #00500A;
+    text-shadow: 10px 10px 5px gray;
+    margin-right: 20%;
+}
+
+.div-botao button{
+    height: 100px;
+    width: 300px;
+    background-color: #00500A;
+    border-radius: 40px;
+    border: none;
+    color: white;
+    font-size: 36px;
+    font-family:'Quattrocento', serif; 
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.div-inferior{
+    display: flex;
+}
+
+.div-texto{
+    display: flex;
+    color: #00500A;
+    width: 43%;
+    text-align: justify;
+    font-size: 30px;
+    font-family: 'Quattrocento', serif;;
+    margin-left: 3%;
+}
+
+.div-imagens{
+    margin-left: 3%;
+   
+}
+.div-imagens img{
+    height: 400px;
+}
