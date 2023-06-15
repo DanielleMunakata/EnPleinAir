@@ -94,16 +94,18 @@
                 console.log(resposta);
                 
                 resposta.json().then(json => {
+                    let u = json[0]
+                    console.log(u)
                     console.log(json);
                     console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nomeCompleto;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.EMAIL_USUARIO = u.email;
+                    sessionStorage.NOME_USUARIO = u.nomeCompleto;
+                    sessionStorage.ID_USUARIO = u.id;
                     
 
-                    setTimeout(function () {
-                        window.location = "pinturas.html";
-                    }, 1000); // apenas para exibir o loading
+                    // setTimeout(function () {
+                    //     window.location = "pinturas.html";
+                    // }, 1000); // apenas para exibir o loading
 
                 });
 
