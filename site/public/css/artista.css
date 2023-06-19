@@ -5,6 +5,12 @@
     height: 100vh;
 }
 
+body{
+    background-image: url("https://img.rawpixel.com/private/static/images/website/2022-05/pdmonet-water-lilies-job582-2.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=507791405b3f225a8cc48b4db6c09b33");
+    background-size: cover;
+    background-position: center;
+}
+
 
 .card{
     display: flex;
@@ -14,17 +20,18 @@
     justify-content: flex-start;
     align-items: start;
     background-color:#FFF;
-    height: 80vh;
-    border-radius: 10px;
+    height: 75vh;
+    border-radius: 25px;
     margin-top: 100px;
-    margin-left: 15%;
+    margin-left: 10%;
+    box-shadow: 2px 2px 5px rgba(0, 0.5, 1, 1);
 }
 
 .card h1{
-  font-size:2.2rem;
+  font-size: 70px;
   color: #000;
   text-align: center;
-  margin-left: 30%;
+  margin-left: 40%;
   font-family: Dancing Script;
 }
 

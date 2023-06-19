@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="css/artista.css">
-    <title>Dashboard</title>
-     
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/artista.css">
+  <title>Dashboard</title>
+
 
 </head>
+
 <body>
-<div class="banner">
-<div class="card">  
-    <h1>Dashboard</h1>     
-        <h4>Artista Favoritos por usuários</h4>
-      <div id="graficoArtista" style="position: relative; height:40vh; width:80vw">
+  <div class="banner">
+    <div class="card">
+      <h1>Dashboard</h1>
+      <center>
+      <h4>Artista Favoritos por usuários:</h4>
+      <div id="graficoArtista" style="position: relative; height:40vh; width:70vw">
         <canvas id="grafico1"></canvas>
-      </div>
+      </center>
       </div>
     </div>
-</div>
+  </div>
+  </div>
+
 </html>
 
 <script>
-    
-    fetch("usuarios/listarGrafico", { cache: 'no-store' })
+
+  fetch("usuarios/listarGrafico", { cache: 'no-store' })
     .then((response) => {
       if (response.ok) {
         response.json().then((resposta) => {
@@ -49,7 +54,7 @@
     let dados = {
       labels: labels,
       datasets: [{
-        label: 'Artistas',
+        label: 'Votos',
         data: [],
         fill: true,
         backgroundColor: 'rgb(239, 124, 51)',
@@ -62,13 +67,13 @@
     console.log(resposta)
 
     // Inserindo valores recebidos em estrutura para plotar o gráfico
-   
+
     for (i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
-            dados.labels.push(registro.artista);
-            dados.datasets[0].data.push(registro.voto);
-            console.log(registro.voto)
-        }
+      var registro = resposta[i];
+      dados.labels.push(registro.artista);
+      dados.datasets[0].data.push(registro.voto);
+      console.log(registro.voto)
+    }
 
 
     console.log('----------------------------------------------')
@@ -81,101 +86,101 @@
 
     // Criando estrutura para plotar gráfico - config
     const config = {
-        type: 'bar',
-        data: dados,
-        options: {
-          plugins: {
-            legend: {
-              labels: {
-                color: 'black' // Defina a cor desejada para o texto do gráficoAstro
-              }
+      type: 'bar',
+      data: dados,
+      options: {
+        plugins: {
+          legend: {
+            labels: {
+              color: 'black' // Defina a cor desejada para o texto do gráficoAstro
             }
           }
         }
-      };
+      }
+    };
 
     // Adicionando gráfico criado em div na tela
     let myChart = new Chart(
-        document.getElementById(`grafico${idGrafico}`),
-        config
-      );
-      myChart.update();
+      document.getElementById(`grafico${idGrafico}`),
+      config
+    );
+    myChart.update();
+  }
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  fetch("usuarios/listarGrafico2", { cache: 'no-store' })
+    .then((response) => {
+      if (response.ok) {
+        response.json().then((resposta) => {
+          plotarGrafico2(resposta, 2);
+        })
+      } else {
+        console.log(response);
+      }
+    }).catch((erro) => {
+      console.log(erro);
+    })
+
+  function plotarGrafico2(resposta, idGrafico) {
+
+    console.log('iniciando plotagem do gráfico...');
+
+    // Criando estrutura para plotar gráfico - labels
+    let labels = [];
+
+    // Criando estrutura para plotar gráfico - dados
+    let dados = {
+      labels: labels,
+      datasets: [{
+        label: 'Planetas',
+        data: [],
+        fill: true,
+        backgroundColor: 'rgb(239, 124, 51)',
+        borderColor: 'rgb(75, 192, 192)'
+      }],
+    };
+
+    console.log('----------------------------------------------')
+    console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+    console.log(resposta)
+
+    // Inserindo valores recebidos em estrutura para plotar o gráfico
+    for (i = 0; i < resposta.length; i++) {
+      var registro = resposta[i];
+      dados.labels.push(registro.artista);
+      dados.datasets[0].data.push(registro.voto);
+      console.log(registro.voto)
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    console.log('----------------------------------------------')
+    console.log('O gráfico será plotado com os respectivos valores:')
+    console.log('Labels:')
+    console.log(labels)
+    console.log('Dados:')
+    console.log(dados.datasets)
+    console.log('----------------------------------------------')
 
-    fetch("usuarios/listarGrafico2", { cache: 'no-store' })
-      .then((response) => {
-        if (response.ok) {
-          response.json().then((resposta) => {
-            plotarGrafico2(resposta, 2);
-          })
-        } else {
-          console.log(response);
-        }
-      }).catch((erro) => {
-        console.log(erro);
-      })
-
-    function plotarGrafico2(resposta, idGrafico) {
-
-      console.log('iniciando plotagem do gráfico...');
-
-      // Criando estrutura para plotar gráfico - labels
-      let labels = [];
-
-      // Criando estrutura para plotar gráfico - dados
-      let dados = {
-        labels: labels,
-        datasets: [{
-          label: 'Planetas',
-          data: [],
-          fill: true,
-          backgroundColor: 'rgb(239, 124, 51)',
-          borderColor: 'rgb(75, 192, 192)'
-        }],
-      };
-
-      console.log('----------------------------------------------')
-      console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
-      console.log(resposta)
-
-      // Inserindo valores recebidos em estrutura para plotar o gráfico
-      for (i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
-            dados.labels.push(registro.artista);
-            dados.datasets[0].data.push(registro.voto);
-            console.log(registro.voto)
-        }
-
-      console.log('----------------------------------------------')
-      console.log('O gráfico será plotado com os respectivos valores:')
-      console.log('Labels:')
-      console.log(labels)
-      console.log('Dados:')
-      console.log(dados.datasets)
-      console.log('----------------------------------------------')
-
-      // Criando estrutura para plotar gráfico - config
-      const config = {
-        type: 'bar',
-        data: dados,
-        options: {
-          plugins: {
-            legend: {
-              labels: {
-                color: 'white' // Defina a cor desejada para o texto do gráficoAstro
-              }
+    // Criando estrutura para plotar gráfico - config
+    const config = {
+      type: 'bar',
+      data: dados,
+      options: {
+        plugins: {
+          legend: {
+            labels: {
+              color: 'white' // Defina a cor desejada para o texto do gráficoAstro
             }
           }
         }
-      };
+      }
+    };
 
-      // Adicionando gráfico criado em div na tela
-      let myChart = new Chart(
-        document.getElementById(`grafico${idGrafico}`),
-        config
-      );
-      myChart.update();
-    }
+    // Adicionando gráfico criado em div na tela
+    let myChart = new Chart(
+      document.getElementById(`grafico${idGrafico}`),
+      config
+    );
+    myChart.update();
+  }
 </script>
